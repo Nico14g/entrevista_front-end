@@ -1,13 +1,5 @@
-.mat-list {
-}
-
-.mat-list-item {
-  width: 100%;
-  min-height: 130px;
-  margin: 10px;
-}
-
 .nested-comment-container {
+  margin-top: 10px;
   margin-left: 20px;
   width: 100%;
   box-sizing: border-box;

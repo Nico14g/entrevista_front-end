@@ -7,13 +7,12 @@ import { Story } from '../interfaces/story.interface';
   styleUrls: ['./story.component.css'],
 })
 export class StoryComponent {
-  @Input() storyUrl!: string;
   @Input() story!: Story;
   @Output() selectedStory = new EventEmitter<string>();
   @Output() selectedComment = new EventEmitter<Story>();
 
   handleTitleClick() {
-    this.selectedStory.emit(this.storyUrl);
+    this.selectedStory.emit(this.story.url);
   }
 
   handleSelectedComment() {

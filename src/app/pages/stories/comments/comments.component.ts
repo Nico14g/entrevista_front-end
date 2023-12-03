@@ -54,8 +54,4 @@ export class CommentsComponent implements OnInit {
   openUrl(url: string): void {
     window.open(url, '_blank');
   }
-
-  showComments(story: Story): void {
-    console.log('comentarios mostrados');
-  }
 }

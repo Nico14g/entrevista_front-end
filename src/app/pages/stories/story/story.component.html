@@ -1,0 +1,45 @@
+<mat-card class="card">
+  <mat-card-header class="card-header">
+    <mat-card-title class="hoverable-title" (click)="handleTitleClick()"
+      >{{ story.index }}.- {{ story.title }}
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content class="card-content">
+    <div class="card-content-row">
+      <div class="card-content-column">
+        <mat-icon style="vertical-align: middle">account_circle</mat-icon>
+        <strong> Author:</strong> {{ story.by }}
+      </div>
+
+      <div class="card-content-column">
+        <mat-icon>forum</mat-icon>
+        <strong> Replies:</strong>
+        {{ story.descendants > 0 ? story.descendants : "-" }}
+      </div>
+      <div class="card-content-column">
+        <mat-icon>star</mat-icon> <strong>Score:</strong> {{ story.score }}
+      </div>
+      <div class="card-content-column">
+        <mat-icon>event</mat-icon> <strong>Date:</strong>
+        {{ story.time | unixDate }}
+      </div>
+
+      <div class="card-content-column">
+        <mat-icon>type</mat-icon> <strong>Type:</strong>
+        {{ story.type }}
+      </div>
+      <div class="card-content-column">
+        <button
+          mat-raised-button
+          color="secondary"
+          aria-label="comments"
+          (click)="handleSelectedComment()"
+        >
+          <mat-icon>chat</mat-icon> <strong>comments: </strong>
+          {{ story.kids ? story.kids.length : 0 }}
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,22 @@
+<mat-card class="card">
+  <mat-card-header class="card-header">
+    <mat-card-title>
+      <mat-icon style="vertical-align: middle">account_circle</mat-icon>
+      <strong> Author:</strong> {{ comment.by }}
+    </mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      ><mat-icon style="vertical-align: middle">event</mat-icon> Date:
+      {{ comment.time | unixDate }}</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-card-content class="card-content">
+    <div class="comment-text" [innerHTML]="comment.text"></div>
+
+    <div *ngIf="comment.kids && comment.kids.length > 0">
+      <app-comments [commentIds]="comment.kids"></app-comments>
+    </div>
+  </mat-card-content>
+
+  <app-comments></app-comments>
+</mat-card>

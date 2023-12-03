@@ -1,0 +1,24 @@
+<div class="loading-container" *ngIf="isLoading">
+  <mat-progress-spinner
+    class="center-spinner"
+    mode="indeterminate"
+  ></mat-progress-spinner>
+</div>
+<mat-list class="mat-list">
+  <mat-list-item class="mat-list-item" *ngFor="let story of dataSource">
+    <app-story
+      (selectedStory)="openUrl(story.url)"
+      (selectedComment)="showComments(story)"
+      [story]="story"
+    ></app-story>
+  </mat-list-item>
+</mat-list>
+<mat-paginator
+  [pageSizeOptions]="[50]"
+  [pageSize]="50"
+  [length]="topStories ? topStories.length : 0"
+  showFirstLastButtons
+  (page)="handlePageChange($event)"
+  aria-label="Select page of periodic elements"
+>
+</mat-paginator>

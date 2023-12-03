@@ -1,0 +1,43 @@
+.mat-list {
+  min-height: 150px;
+}
+
+.mat-list-item {
+  width: 100%;
+  min-height: 100px;
+}
+
+.card {
+  width: 100%;
+  min-height: 100px;
+  max-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card-header {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.card-content-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-content-column {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.hoverable-title {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.hoverable-title:hover {
+  color: darkblue;
+}

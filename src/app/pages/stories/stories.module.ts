@@ -10,5 +10,6 @@ import { StoryComponent } from './story/story.component';
 @NgModule({
   declarations: [StoriesComponent, StoryComponent],
   imports: [CommonModule, StoriesRoutingModule, MaterialModule, UnixDatePipe],
+  exports: [StoryComponent],
 })
 export class StoriesModule {}

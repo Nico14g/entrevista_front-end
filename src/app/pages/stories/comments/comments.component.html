@@ -1,5 +1,7 @@
-<mat-list class="mat-list">
-  <mat-list-item class="mat-list-item" *ngFor="let comment of comments">
-    <app-comment [comment]="comment"></app-comment>
-  </mat-list-item>
-</mat-list>
+<div class="loading-container" *ngIf="displayStory()">
+  <app-story (selectedStory)="openUrl(story.url)" [story]="story"></app-story>
+</div>
+
+<div class="nested-comment-container" *ngFor="let comment of comments">
+  <app-comment [comment]="comment"></app-comment>
+</div>

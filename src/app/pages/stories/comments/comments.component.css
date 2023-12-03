@@ -6,3 +6,15 @@
   min-height: 130px;
   margin: 10px;
 }
+
+.nested-comment-container {
+  margin-left: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.center-spinner {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}

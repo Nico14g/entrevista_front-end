@@ -23,9 +23,14 @@ export class CommentsComponent implements OnInit {
     const readStory = this.dataSvc.getReadStory();
     if (!readStory) {
       this.story = this.dataSvc.getStory();
-      this.loadComments(this.story.kids);
+
+      if (this.story?.kids) {
+        this.loadComments(this.story.kids);
+      }
     } else {
-      this.loadComments(this.commentIds);
+      if (this.commentIds.length > 0) {
+        this.loadComments(this.commentIds);
+      }
     }
   }
 
@@ -35,5 +40,22 @@ export class CommentsComponent implements OnInit {
         this.comments.push(res);
       });
     });
+  }
+
+  displayStory(): boolean {
+    if (!this.story) {
+      return false;
+    }
+
+    const commentIds = this.comments.map((item) => item.id);
+    return this.story.kids.every((commentId) => commentIds.includes(commentId));
+  }
+
+  openUrl(url: string): void {
+    window.open(url, '_blank');
+  }
+
+  showComments(story: Story): void {
+    console.log('comentarios mostrados');
   }
 }

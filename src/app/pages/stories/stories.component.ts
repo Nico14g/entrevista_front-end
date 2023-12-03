@@ -54,7 +54,10 @@ export class StoriesComponent implements OnInit {
         map((stories: Story[][]) => stories.flat())
       )
       .subscribe((stories: Story[]) => {
-        this.topStories = stories;
+        this.topStories = stories.map((story, index) => ({
+          ...story,
+          index: index + 1,
+        }));
         this.dataSvc.setTopStories(this.topStories);
         this.isLoading = false;
         this.setupPaginator();
@@ -88,7 +91,7 @@ export class StoriesComponent implements OnInit {
   }
 
   showComments(story: Story): void {
-    if (story.kids.length > 0) {
+    if (story && story?.kids?.length > 0) {
       this.dataSvc.setSelectedStory(story);
       this.router.navigate(['/top', story.id]);
     }

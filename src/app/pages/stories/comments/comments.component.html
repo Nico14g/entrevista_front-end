@@ -1,7 +1,8 @@
 <div class="loading-container" *ngIf="displayStory()">
+  <!-- Se llama a app-story que es el mismo componente que renderiza las topStories de forma individual. -->
   <app-story (selectedStory)="openUrl(story.url)" [story]="story"></app-story>
 </div>
-
+<!-- Se recorren los comentarios y se hace una llamada a app-comment -->
 <div class="nested-comment-container" *ngFor="let comment of comments">
   <app-comment [comment]="comment"></app-comment>
 </div>

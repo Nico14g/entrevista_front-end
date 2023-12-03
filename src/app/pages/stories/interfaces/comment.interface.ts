@@ -1,3 +1,4 @@
+//interface de Comment, donde kids es opcional, ya que a veces no tiene este campo.
 export interface Comment {
   by: string;
   id: number;

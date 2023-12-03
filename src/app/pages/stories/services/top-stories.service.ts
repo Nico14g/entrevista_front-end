@@ -7,10 +7,12 @@ import { TopStories } from '../interfaces/topStories.interface';
   providedIn: 'root',
 })
 export class TopStoriesService {
+  //URL api para obtener topStories.
   private apiUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json';
 
   constructor(private http: HttpClient) {}
 
+  //Función encargada de conectarse con la API de Hacker News y retornar un observable de topStories
   getTopStories(): Observable<TopStories[]> {
     return this.http.get<TopStories[]>(this.apiUrl);
   }

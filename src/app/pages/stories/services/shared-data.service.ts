@@ -5,9 +5,10 @@ import { Story } from '../interfaces/story.interface';
   providedIn: 'root',
 })
 export class SharedDataService {
+  //Servicio utilizado para almacenar información como la story seleccinada
+  //el total de topStories o si ya se revisó un comentario, para evitar bucles infinitos
   private story!: Story;
   private topStories!: Story[];
-  private showedComments: number[] = [];
   private readStory = false;
 
   setSelectedStory(story: Story) {
@@ -33,13 +34,5 @@ export class SharedDataService {
 
   getStorysKids() {
     return this.story.kids;
-  }
-
-  setShowedComments(id: number) {
-    this.showedComments.push(id);
-  }
-
-  getShowedComments() {
-    return this.showedComments;
   }
 }

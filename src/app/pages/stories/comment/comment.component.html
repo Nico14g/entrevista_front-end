@@ -11,8 +11,9 @@
   </mat-card-header>
 
   <mat-card-content class="card-content">
+    <!-- Se renderiza texto del comentario, se usa innerHTML, debido a que venia con etiquetas de HTML, por lo que se muestra como texto con estilos -->
     <div class="comment-text" [innerHTML]="comment.text"></div>
-
+    <!-- Llamada recursiva a app-comments, ya que es el componente que llamo a este, donde se verifica que existan comentarios que renderizar. -->
     <div *ngIf="comment.kids && comment.kids.length > 0">
       <app-comments [commentIds]="comment.kids"></app-comments>
     </div>

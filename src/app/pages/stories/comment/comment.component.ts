@@ -7,5 +7,6 @@ import { Comment } from '../interfaces/comment.interface';
   styleUrls: ['./comment.component.css'],
 })
 export class CommentComponent {
+  //comment se obtiene desde comments.component.html
   @Input() comment!: Comment;
 }
